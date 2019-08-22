@@ -6,3 +6,18 @@
 массива. Но если это слишком сложно, то используйте метод сортировки,
  который не рассматривался на уроках
 """
+import random
+m = int(input('Введите значение m:'))
+
+a = [random.randint(0, 200) for i in range(2*m + 1)]
+print(a)
+for i in range(2*m + 1):
+    c_min_el, c_max_el = 0, 0
+    for j in range(2*m + 1):
+        if a[j] != a[i]:
+            if a[j] > a[i]:
+                c_max_el += 1
+            else:
+                c_min_el += 1
+    if c_max_el == c_min_el:
+        print(f'a{i} = {a[i]} медиана')
